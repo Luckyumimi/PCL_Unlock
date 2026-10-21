@@ -2,6 +2,14 @@
 
 项目须知：仅为 PCL2 CE 提供地区绕过启动。**不支持原版 PCL2。** 本工具为注入式工具，不修改 PCL2 CE 本体和 Windows 系统区域设置。
 
+## 下载
+
+[Releases下载](https://github.com/Luckyumimi/PCL_Unlock/releases)
+
+[网盘下载](https://sachimi.lanzouu.com/itlQS4cvs7gj) 
+**密码：gb5a**
+
+
 ## 使用
 
 1. 将 PCL_Unlock.exe 放到 PCL2 CE 主程序所在目录并运行。
@@ -13,7 +21,7 @@
 
 - 需要管理员权限，因为目标 PCL2 CE 可能带有“以管理员身份运行”兼容性标记。
 - 启动钩子优先使用启动器同目录下的 Hook/PclRegionHook.dll，否则从单文件内嵌资源释放到 %LOCALAPPDATA%/PCLRegionUnlock/Hook/。同目录可放置 Hook/0Harmony.dll 供本地 Hook 使用。
-- --self-check 输出诊断到 %TEMP%/PCLRegionUnlock.launcher.log。
+- 日志文件输出到 .\PCLRegionUnlock.launcher.log。
 
 ## 原理与边界
 
