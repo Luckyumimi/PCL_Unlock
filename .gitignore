@@ -1,0 +1,13 @@
+# 构建产物
+bin/
+obj/
+dist/
+
+# 用户/IDE 文件
+.vs/
+.idea/
+*.user
+*.suo
+
+# 日志
+*.log

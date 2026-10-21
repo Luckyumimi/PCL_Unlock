@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>PCL_Unlock</AssemblyName>
+    <RootNamespace>PclRegionUnlock</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <EnableWindowsTargeting>true</EnableWindowsTargeting>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <PublishSingleFile>true</PublishSingleFile>
+    <SelfContained>false</SelfContained>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Version>1.0.0</Version>
+    <Product>PCL_Unlock</Product>
+    <Description>Creates a PCL2 CE shortcut with the region-unlock startup hook attached.</Description>
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 由 build.ps1 传入 hook 的编译输出目录：把 hook 与 Harmony 内嵌进启动器，实现真正的单文件分发。 -->
+    <EmbeddedResource Condition="'$(PclHookDir)' != ''"
+                      Include="$(PclHookDir)\PclRegionHook.dll"
+                      LogicalName="PclRegionUnlock.Hook.PclRegionHook.dll" />
+    <EmbeddedResource Condition="'$(PclHookDir)' != ''"
+                      Include="$(PclHookDir)\0Harmony.dll"
+                      LogicalName="PclRegionUnlock.Hook.0Harmony.dll" />
+  </ItemGroup>
+
+</Project>
