@@ -1,4 +1,4 @@
-# PCL Unlock
+# PCL Unlock PCL解锁器
 
 项目须知：仅为 PCL2 CE 提供地区绕过启动。**不支持原版 PCL2。** 本工具为注入式工具，不修改 PCL2 CE 本体和 Windows 系统区域设置。
 
